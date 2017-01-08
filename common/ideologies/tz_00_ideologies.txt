@@ -1,0 +1,49 @@
+ideologies = {
+	
+	authoritarianism = {
+	
+		types = {
+		
+			autocracy = {
+			}
+			
+			royalism = {
+			}
+			
+			imperialism = {
+			}
+			
+			popular_imperialism = {
+			}
+			
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_AUTHORITARIAN_1"
+			"FACTION_NAME_AUTHORITARIAN_2"
+			"FACTION_NAME_AUTHORITARIAN_3"
+			"FACTION_NAME_AUTHORITARIAN_4"
+			"FACTION_NAME_AUTHORITARIAN_5"
+		}
+		
+		color = { 122 0 118 }
+		
+		war_impact_on_world_tension = 1.0			#evil!
+		faction_impact_on_world_tension = 1.0
+		
+		rules = {
+			can_force_government = yes
+			can_send_volunteers = no
+			can_puppet = yes
+		}
+		
+		modifiers = {
+			justify_war_goal_when_in_major_war_time = -0.50
+			join_faction_tension = 0.50
+			lend_lease_tension = 0.10
+			guarantee_tension = 0.25
+		}
+
+		ai_fascist = yes # uses the fascist AI behaviour
+	}
+}

@@ -1,0 +1,748 @@
+focus_tree = {
+	id = Marzeron_focus
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			original_tag = MAR
+		}
+	}
+
+	default = no
+	reset_on_civilwar = no
+	
+	## Internal Stability + Wargoals
+	
+	focus = {
+		id = MAR_stability
+		icon = GFX_goal_generic_position_armies
+		x = 3
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	#Northern Border
+	
+	focus = {
+		id = MAR_north_con
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = MAR_stability }
+		x = 1
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_norv_border
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = MAR_north_con }
+		mutually_exclusive = { focus = MAR_norv_attack }
+		x = 0
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_norv_attack
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = MAR_north_con }
+		mutually_exclusive = { focus = MAR_norv_border }
+		x = 2
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_north_coastal
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = MAR_norv_border focus = MAR_norv_attack}
+		x = 1
+		y = 3
+		cost = 10
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	#Western Border
+	
+	focus = {
+		id = MAR_west_con
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = MAR_stability }
+		x = 5
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_west_recon
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = MAR_west_con }
+		mutually_exclusive = { focus = MAR_west_attack }
+		x = 4
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_west_attack
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = MAR_west_con }
+		mutually_exclusive = { focus = MAR_west_recon }
+		x = 6
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_west_rail
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = MAR_west_recon focus = MAR_west_attack}
+		x = 5
+		y = 3
+		cost = 10
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+
+	#Far West Border
+	
+	focus = {
+		id = MAR_farwest_con
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = MAR_west_recon focus = MAR_west_attack}
+		x = 3
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_co_prosp
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = MAR_farwest_con }
+		mutually_exclusive = { focus = MAR_farwest_attack }
+		x = 2
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_farwest_attack
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = MAR_farwest_con }
+		mutually_exclusive = { focus = MAR_co_prosp }
+		x = 4
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_farwest_rail
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = MAR_co_prosp focus = MAR_farwest_attack}
+		prerequisite = { focus = MAR_west_rail }
+		x = 5
+		y = 5
+		cost = 10
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	#Arcadian Consolidation
+	
+	focus = {
+		id = MAR_arc_con
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = MAR_co_prosp focus = MAR_farwest_attack}
+		x = 3
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_arc_alliance
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = MAR_arc_con }
+		mutually_exclusive = { focus = MAR_arc_attack }
+		x = 2
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_arc_attack
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = MAR_arc_con }
+		mutually_exclusive = { focus = MAR_arc_alliance }
+		x = 4
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_arc_port
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = MAR_arc_alliance focus = MAR_arc_attack}
+		x = 3
+		y = 7
+		cost = 10
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		}
+	}
+	
+	## External Security
+	
+	focus = {
+		id = MAR_security
+		icon = GFX_goal_generic_attack_allies
+		x = 11
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	#Control the Mainland
+	
+	focus = {
+		id = MAR_control_main
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = MAR_security }
+		x = 9
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = MAR_infantry
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = MAR_control_main }
+		mutually_exclusive = { focus = MAR_mobile }
+		x = 8
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = tz_infantry_tactics_idea
+		}
+	}
+	
+	focus = {
+		id = MAR_mobile
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = MAR_control_main }
+		mutually_exclusive = { focus = MAR_infantry }
+		x = 10
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = tz_mobile_tactics_idea
+		}
+	}
+	
+	focus = {
+		id = MAR_fortify
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = MAR_infantry focus = MAR_mobile }
+		x = 9
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_infantry_upgrade
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = MAR_fortify }
+		prerequisite = { focus = MAR_munitions }
+		x = 8
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_doctrine
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = MAR_fortify }
+		x = 10
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_seteran_line
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = MAR_infantry_upgrade }
+		prerequisite = { focus = MAR_doctrine }
+		x = 9
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_arc_def
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = MAR_seteran_line }
+		x = 9
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_keep_elisar
+		icon = GFX_goal_molotov_ribbentrop_pact
+		prerequisite = { focus = MAR_arc_def }
+		mutually_exclusive = { focus = MAR_break_elisar }
+		x = 8
+		y = 7
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_break_elisar
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = MAR_arc_def }
+		mutually_exclusive = { focus = MAR_keep_elisar }
+		x = 10
+		y = 7
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	#One Thousand Ship Navy
+	
+	focus = {
+		id = MAR_one_thousand
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = MAR_security }
+		x = 13
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_naval_support
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = MAR_one_thousand }
+		x = 13
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_norvish_advisor
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = MAR_naval_support }
+		x = 13
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_connected_shipyard
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = MAR_norvish_advisor }
+		x = 13
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_southern_fleet
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = MAR_connected_shipyard }
+		x = 13
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_bohzan_sea_treaty
+		icon = GFX_goal_molotov_ribbentrop_pact
+		prerequisite = { focus = MAR_southern_fleet }
+		mutually_exclusive = { focus = MAR_challenge_baitish }
+		x = 12
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_challenge_baitish
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = MAR_southern_fleet }
+		mutually_exclusive = { focus = MAR_bohzan_sea_treaty }
+		x = 14
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	##Industry
+	
+	focus = {
+		id = MAR_industry
+		icon = GFX_goal_generic_production
+		x = 7
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = MAR_king_fact
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = MAR_industry }
+		x = 7
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MAR_munitions
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = MAR_king_fact }
+		x = 7
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MAR_far_steel
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = MAR_west_attack focus = MAR_west_recon }
+		prerequisite = { focus = MAR_munitions }
+		x = 6
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_seteran_mine
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = MAR_far_steel }
+		x = 7
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_arc_oil
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = { focus = MAR_seteran_mine }
+		x = 6
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MAR_research
+		icon = GFX_focus_research
+		prerequisite = { focus = MAR_arc_oil }
+		prerequisite = { focus = MAR_arc_alliance focus = MAR_arc_attack }
+		x = 6
+		y = 7
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+}

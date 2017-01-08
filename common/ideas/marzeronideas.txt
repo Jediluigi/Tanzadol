@@ -1,0 +1,342 @@
+ideas = {
+
+	political_advisor = {
+		# POLITICAL	
+		mar_communist_revolutionary = {
+			
+			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = CHI } }
+				NOT = {
+					has_available_idea_with_traits = { idea = communist_revolutionary limit = 1 }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			on_add = {
+				country_event = political.1
+			}
+	
+			do_effect = {
+				NOT = {
+					has_government = communism
+				}
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+			
+		mar_democratic_reformer = {
+			
+			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = {
+					has_available_idea_with_traits = { idea = democratic_reformer limit = 1 }
+				}
+			}
+			
+
+			
+			traits = { democratic_reformer }
+	
+			on_add = {
+				country_event = political.13
+			}
+	
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		mar_fascist_demagogue = {
+			
+			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = {
+					has_available_idea_with_traits = { idea = fascist_demagogue limit = 1 }
+				}
+			}
+			
+
+			
+			traits = { fascist_demagogue }
+	
+			on_add = {
+				country_event = political.7
+			}
+	
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+	country = {
+	
+		tz_mar_shattered_regime = {
+			
+			allowed = {
+				original_tag = MAR
+			}
+		
+			removal_cost = -1
+			
+			picture = generic_disjointed_gov
+			
+			modifier = {
+				political_power_cost = 0.5
+				unity_factor = -0.20
+			}
+		
+		}
+		
+		tz_mar_high_command = {
+			
+			allowed = {
+				original_tag = MAR
+			}
+		
+			removal_cost = -1
+			
+			picture = generic_pp_unity_bonus
+			
+			modifier = {
+				army_org_Factor = 0.05
+				planning_speed = 0.05
+				training_time_army_factor = -0.05
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.05
+			}
+		
+		}
+	
+		tz_infantry_tactics_idea = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+		
+		tz_mobile_tactics_idea = {
+		
+		
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = FRA_motorized_focus
+			
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1 
+					instant = yes
+				}
+			}
+		}
+	
+	}
+
+	political_advisor = {
+
+		mar_captain_of_industry = {
+
+			allowed = {
+				original_tag = MAR
+			}			
+			
+			traits = { captain_of_industry }
+		}
+		
+		mar_fortification_engineer = {
+
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			traits = { smooth_talking_charmer }
+		}
+
+		mar_war_industrialist = {
+
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			traits = { compassionate_gentleman }
+		}
+	}
+
+	army_chief = {
+		
+		mar_army_chief_off = {
+			
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			traits = { army_chief_offensive_2 }
+		}
+
+		mar_army_chief_def = {
+			
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			traits = { army_chief_defensive_2 }
+		}
+	}
+
+	navy_chief = {		
+
+		mar_navy_chief_decisive_bat = {
+			
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			traits = { navy_chief_decisive_battle_2 }
+		}
+
+		mar_navy_anti_submarine = {
+			
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			traits = { navy_anti_submarine_2 }
+		}
+	}
+
+	air_chief = {
+
+		mar_air_close_air_sup = {
+			
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			traits = { air_close_air_support_2 }
+		}
+	
+		mar_air_chief_all_weather = {
+			
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			traits = { air_chief_all_weather_2 }			
+		}
+	}
+
+	high_command = {
+
+		mar_army_art = {
+			
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			traits = { army_artillery_3 }			
+		}
+		
+		mar_army_log = {
+
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			traits = { army_logistics_2 }			
+		}
+
+		mar_navy_fleet_log = {
+
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			traits = { navy_fleet_logistics_1 }			
+		}
+
+		mar_air_air_combat_trainer = {
+
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			traits = { air_air_combat_training_2 }			
+		}
+	}
+
+	theorist = {
+
+		mar_military_theorist = {
+			
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			research_bonus = {
+				land_doctrine = 0.07
+			}
+			
+			traits = { military_theorist }
+		}
+	
+		mar_naval_theorist = {
+			
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			research_bonus = {
+				naval_doctrine = 0.07
+			}
+			
+			traits = { naval_theorist }
+		}
+
+		mar_air_warfare_theorist = {
+			
+			allowed = {
+				original_tag = MAR
+			}	
+			
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+
+	}
+	
+}
