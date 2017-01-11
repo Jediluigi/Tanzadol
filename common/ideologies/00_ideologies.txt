@@ -15,6 +15,9 @@ ideologies = {
 			
 			constitutional_monarchy = {
 			}
+			
+			militarist_federation = {
+			}
 		}
 		
 		dynamic_faction_names = {
